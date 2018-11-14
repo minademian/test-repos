@@ -1,0 +1,20 @@
+- hosts:
+    - localhost
+  tasks:
+    - name: Ensure project directory exists.
+      file:
+        path: "/Users/minademian/code"
+        state: directory
+      when: not ansible_check_mode
+
+    - name: Ensure main directory exists.
+      file:
+        path: "/Users/minademian/code/personal/nansible-test"
+        state: directory
+      when: not ansible_check_mode
+
+    - name: create directory
+      file:
+        state: directory
+        path: "/Users/minademian/code/personal/nansible-test/cheese"
+      when: not ansible_check_mode
